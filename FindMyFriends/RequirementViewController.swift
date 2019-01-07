@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 class RequirementViewController: UIViewController{
-    @IBOutlet weak var groupName: UITextField!
+//    @IBOutlet weak var groupName: UITextField!
     @IBOutlet weak var userName: UITextField!
  
      let locationManager = CLLocationManager()
@@ -19,6 +19,8 @@ class RequirementViewController: UIViewController{
     let defaults = UserDefaults.standard
     
     var guorp :String?
+    
+    var switechButtonChange = false
     override func viewDidLoad() {
         super.viewDidLoad()
   
@@ -47,40 +49,52 @@ class RequirementViewController: UIViewController{
         
           print("lat\(lat),lon\(lon)")
         
-        guorp = groupName.text!
-        userName.text = "Allen"
+//        guorp = groupName.text!
+//        userName.text = "Allen"
         
     }
    
     @IBAction func keepreport(_ sender: UISwitch) {
         if sender.isOn{
-            if userName.text == "" || groupName.text == ""{
-                let alert = UIAlertController(title: "請輸入userNamer及groupName", message: "", preferredStyle: .alert)
+            if userName.text == "" {
+                let alert = UIAlertController(title: "請輸入userNamer", message: "", preferredStyle: .alert)
                 let sure = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
                     sender.isOn = false
                 }
                 alert.addAction(sure)
+                
                 present(alert, animated: true, completion: nil)
+               
             }else{
-                self.defaults.setValue(self.groupName.text, forKeyPath: "Group")
+//                self.defaults.setValue(self.groupName.text, forKeyPath: "Group")
                 self.timer(booln: true)
+                 switechButtonChange = true
             }
 
 
         }else{
             time?.invalidate()
-            
+             switechButtonChange = false
         }
         
         
     }
     @IBAction func reportLocation(_ sender: UIButton) {
-
+        if switechButtonChange == true{
+            let lightRed = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "lightRed")
+          
+            self.navigationController?.pushViewController(lightRed, animated: true)
+        }else{
+             let alert = UIAlertController(title: "請打開即時更新位置開關", message: "", preferredStyle: .alert)
+         let sure = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(sure)
+            present(alert, animated: true, completion: nil)
+        }
     }
  
     func switchWhilereport(){
         
-        let appURL = URL(string: "http://class.softarts.cc/FindMyFriends/updateUserLocation.php?GroupName=\(self.groupName.text ?? "")&UserName=\(self.userName.text ?? "")&Lat=\(lat!)&Lon=\(lon!)")
+        let appURL = URL(string: "http://class.softarts.cc/FindMyFriends/updateUserLocation.php?GroupName=zz999&UserName=\(self.userName.text ?? "")&Lat=\(lat!)&Lon=\(lon!)")
         
         if let url = appURL{
             

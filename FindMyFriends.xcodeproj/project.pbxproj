@@ -15,6 +15,8 @@
 		3A4400E721DD9CCF00C236E9 /* FindMyFriendsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4400E621DD9CCF00C236E9 /* FindMyFriendsUITests.swift */; };
 		3A4400F521DDA08400C236E9 /* RequirementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4400F421DDA08400C236E9 /* RequirementViewController.swift */; };
 		3A4400F721DDA09A00C236E9 /* FindMyFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4400F621DDA09A00C236E9 /* FindMyFriendViewController.swift */; };
+		3A44013421E2E0E500C236E9 /* MotionTrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A44013321E2E0E500C236E9 /* MotionTrackViewController.swift */; };
+		3A44013621E2E44500C236E9 /* customPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A44013521E2E44500C236E9 /* customPin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		3A4400E821DD9CCF00C236E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A4400F421DDA08400C236E9 /* RequirementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementViewController.swift; sourceTree = "<group>"; };
 		3A4400F621DDA09A00C236E9 /* FindMyFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyFriendViewController.swift; sourceTree = "<group>"; };
+		3A44013321E2E0E500C236E9 /* MotionTrackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionTrackViewController.swift; sourceTree = "<group>"; };
+		3A44013521E2E44500C236E9 /* customPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customPin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +106,12 @@
 				3A4400C621DD9CCD00C236E9 /* AppDelegate.swift */,
 				3A4400F421DDA08400C236E9 /* RequirementViewController.swift */,
 				3A4400F621DDA09A00C236E9 /* FindMyFriendViewController.swift */,
+				3A44013321E2E0E500C236E9 /* MotionTrackViewController.swift */,
 				3A4400CA21DD9CCD00C236E9 /* Main.storyboard */,
 				3A4400CD21DD9CCF00C236E9 /* Assets.xcassets */,
 				3A4400CF21DD9CCF00C236E9 /* LaunchScreen.storyboard */,
 				3A4400D221DD9CCF00C236E9 /* Info.plist */,
+				3A44013521E2E44500C236E9 /* customPin.swift */,
 			);
 			path = FindMyFriends;
 			sourceTree = "<group>";
@@ -264,7 +270,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A44013421E2E0E500C236E9 /* MotionTrackViewController.swift in Sources */,
 				3A4400F721DDA09A00C236E9 /* FindMyFriendViewController.swift in Sources */,
+				3A44013621E2E44500C236E9 /* customPin.swift in Sources */,
 				3A4400F521DDA08400C236E9 /* RequirementViewController.swift in Sources */,
 				3A4400C721DD9CCD00C236E9 /* AppDelegate.swift in Sources */,
 			);

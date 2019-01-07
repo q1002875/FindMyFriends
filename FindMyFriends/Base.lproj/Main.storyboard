@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--回報位置-->
+        <!--Requirement View Controller-->
         <scene sceneID="xxV-yo-KXm">
             <objects>
                 <viewController id="Mz5-qi-TYm" customClass="RequirementViewController" customModule="FindMyFriends" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,13 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請填寫小英文及數字" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c6Q-AL-pbc">
-                                <rect key="frame" x="139" y="123" width="148" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EfL-AU-5xv">
                                 <rect key="frame" x="139" y="198" width="148" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -38,7 +31,6 @@
                                 <state key="normal" title="回報個人位置"/>
                                 <connections>
                                     <action selector="reportLocation:" destination="Mz5-qi-TYm" eventType="touchUpInside" id="0aU-Zh-F9W"/>
-                                    <segue destination="T7S-gr-YSI" kind="show" id="L90-i8-Xmk"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GroupName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtQ-hB-mMm">
@@ -66,20 +58,49 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Pqd-bA-4qc"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="回報位置" id="Zd2-tj-B3r"/>
+                    <navigationItem key="navigationItem" id="yXH-3R-IEY"/>
                     <connections>
-                        <outlet property="groupName" destination="c6Q-AL-pbc" id="5Gd-S9-wET"/>
                         <outlet property="userName" destination="EfL-AU-5xv" id="lPv-8r-W1h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SoU-zS-Pxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1009" y="-16"/>
+            <point key="canvasLocation" x="1948" y="-16.641679160419791"/>
+        </scene>
+        <!--Motion Track View Controller-->
+        <scene sceneID="0TZ-Yk-864">
+            <objects>
+                <viewController id="b81-8x-ebr" customClass="MotionTrackViewController" customModule="FindMyFriends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ryG-uC-eCQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="DMy-0f-11t">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DMy-0f-11t" firstAttribute="leading" secondItem="KMp-CG-6hS" secondAttribute="leading" id="10C-q6-sdK"/>
+                            <constraint firstItem="DMy-0f-11t" firstAttribute="top" secondItem="KMp-CG-6hS" secondAttribute="top" id="2xA-4j-QK3"/>
+                            <constraint firstItem="DMy-0f-11t" firstAttribute="bottom" secondItem="KMp-CG-6hS" secondAttribute="bottom" id="BQJ-Kz-LdP"/>
+                            <constraint firstItem="DMy-0f-11t" firstAttribute="trailing" secondItem="KMp-CG-6hS" secondAttribute="trailing" id="s0K-dV-emR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KMp-CG-6hS"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YrD-IN-sQr"/>
+                    <connections>
+                        <outlet property="mapview" destination="DMy-0f-11t" id="0iF-lK-auX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PVk-X5-Lcl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2008.8" y="748.87556221889065"/>
         </scene>
         <!--Find My Friend View Controller-->
         <scene sceneID="VyO-3O-S7F">
             <objects>
-                <viewController id="T7S-gr-YSI" customClass="FindMyFriendViewController" customModule="FindMyFriends" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="lightRed" id="T7S-gr-YSI" customClass="FindMyFriendViewController" customModule="FindMyFriends" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l7J-YN-6E5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,7 +119,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53z-yR-p1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1826.4000000000001" y="-11.244377811094454"/>
+            <point key="canvasLocation" x="2765.5999999999999" y="-11.244377811094454"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="TOi-SQ-lLG">
@@ -110,12 +131,51 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Mz5-qi-TYm" kind="relationship" relationship="viewControllers" id="i31-Y2-mGo"/>
+                        <segue destination="4bZ-fh-4Re" kind="relationship" relationship="viewControllers" id="i31-Y2-mGo"/>
+                        <segue destination="nXy-1B-LsK" kind="relationship" relationship="viewControllers" id="Vac-7M-f8A"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jHo-JB-GnM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="58" y="389"/>
+        </scene>
+        <!--回報位置-->
+        <scene sceneID="Yv8-vO-c0s">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4bZ-fh-4Re" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="回報位置" id="Zd2-tj-B3r"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Awo-xk-67c">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Mz5-qi-TYm" kind="relationship" relationship="rootViewController" id="bAh-vN-zCA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bkL-ec-uy0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1008.8" y="-16.641679160419791"/>
+        </scene>
+        <!--個人移動軌跡-->
+        <scene sceneID="9kC-Ai-2QF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nXy-1B-LsK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="個人移動軌跡" id="Xzo-ti-w1K"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4Oz-51-xC3">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="b81-8x-ebr" kind="relationship" relationship="rootViewController" id="IYz-Cm-BrL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rxX-D6-UxU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1086" y="749"/>
         </scene>
     </scenes>
 </document>

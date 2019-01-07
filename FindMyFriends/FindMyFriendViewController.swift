@@ -10,6 +10,8 @@ import UIKit
 import MapKit
 import CoreLocation
 struct name:Decodable {
+  
+    
     let result:Bool
     let friends:[findfriends]
   
@@ -60,7 +62,7 @@ class FindMyFriendViewController: UIViewController {
     }
     var coordinate: [CLLocationCoordinate2D]?
     func findFriends(){
-        let url = "http://class.softarts.cc/FindMyFriends/queryFriendLocations.php?GroupName=\(self.group!)"
+        let url = "http://class.softarts.cc/FindMyFriends/queryFriendLocations.php?GroupName=zz999"
         
         if let url = URL(string: url){
             
@@ -83,7 +85,7 @@ class FindMyFriendViewController: UIViewController {
                         print(cllcoordtype!)
                         let anno = myAnnotation()
                         anno.coordinate = cllcoordtype!
-                       anno.title = coord.friendName
+                        anno.title = coord.friendName
                         DispatchQueue.main.async {
                             self.mapview.addAnnotation(anno)
                         }
